@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josuemarroquin.controller.ProveedoresController">
+   <children>
+      <ImageView fitHeight="769.0" fitWidth="1364.0" layoutY="-7.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../resource/images/Kinal%20Mall%20Vistas.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="36.0" layoutY="403.0" prefHeight="329.0" prefWidth="232.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#Nuevo" prefHeight="71.0" prefWidth="232.0" stylesheets="@../resource/css/BotonesKinalMall.css" text="Nuevo" textFill="WHITE">
+               <graphic>
+                  <ImageView fx:id="imgNuevo" fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/images/btn%20Nuevo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" prefHeight="68.0" prefWidth="232.0" text="Eliminar" textFill="WHITE" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fx:id="imgEliminar" fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/images/btn%20Eliminar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <stylesheets>
+                  <URL value="@../resource/css/BotonesCSS.css" />
+                  <URL value="@../resource/css/BotonesKinalMall.css" />
+               </stylesheets>
+            </Button>
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editar" prefHeight="64.0" prefWidth="232.0" text="Editar" textFill="WHITE" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fx:id="imgEditar" fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/images/btn%20Editar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <stylesheets>
+                  <URL value="@../resource/css/BotonesCSS.css" />
+                  <URL value="@../resource/css/BotonesKinalMall.css" />
+               </stylesheets>
+            </Button>
+            <Button fx:id="btnReportar" mnemonicParsing="false" onAction="#reportar" prefHeight="66.0" prefWidth="232.0" stylesheets="@../resource/css/BotonesKinalMall.css" text="Reportar" textFill="WHITE" GridPane.rowIndex="3">
+               <graphic>
+                  <ImageView fx:id="imgReportar" fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/images/btn%20Reportar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </GridPane>
+      <TableView fx:id="tblProveedores" layoutX="401.0" layoutY="382.0" onMouseClicked="#selecionarElemento" prefHeight="350.0" prefWidth="892.0" stylesheets="@../resource/css/estiloTableview.css">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colNIT" prefWidth="109.83306884765625" text="NIT" />
+            <TableColumn fx:id="colServicioPrestado" prefWidth="135.5848388671875" text="Servicio Prestado" />
+            <TableColumn fx:id="colTelefono" prefWidth="129.21514892578125" text="Telefono" />
+            <TableColumn fx:id="colDireccion" prefWidth="240.7088623046875" text="Direccion" />
+            <TableColumn fx:id="colSaldoFavor" prefWidth="99.2911376953125" text="Saldo a Favor" />
+            <TableColumn fx:id="colSaldoContra" prefWidth="102.419921875" text="Saldo en Contra" />
+        </columns>
+      </TableView>
+      <Label layoutX="309.0" layoutY="65.0" prefHeight="51.0" prefWidth="48.0" text="ID: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="306.0" layoutY="111.0" prefHeight="51.0" prefWidth="54.0" text="NIT:" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="311.0" layoutY="153.0" prefHeight="51.0" prefWidth="204.0" text="Servicio Prestado:" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="317.0" layoutY="200.0" prefHeight="51.0" prefWidth="109.0" text="Telefono: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="313.0" layoutY="316.0" prefHeight="51.0" prefWidth="117.0" text="Direccion: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="309.0" layoutY="251.0" prefHeight="51.0" prefWidth="168.0" text="Saldo a Favor: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="758.0" layoutY="256.0" prefHeight="51.0" prefWidth="190.0" text="Saldo en Contra: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" editable="false" layoutX="512.0" layoutY="64.0" opacity="0.75" prefHeight="38.0" prefWidth="351.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtNIT" layoutX="512.0" layoutY="111.0" prefHeight="38.0" prefWidth="351.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtServicioPrestado" layoutX="515.0" layoutY="159.0" prefHeight="38.0" prefWidth="351.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtTelefono" layoutX="515.0" layoutY="207.0" prefHeight="38.0" prefWidth="351.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtDireccion" layoutX="512.0" layoutY="316.0" prefHeight="38.0" prefWidth="351.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtSaldoFavor" layoutX="512.0" layoutY="263.0" prefHeight="38.0" prefWidth="232.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtSaldoContra" layoutX="948.0" layoutY="263.0" prefHeight="38.0" prefWidth="232.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="60.0" fitWidth="70.0" layoutX="303.0" layoutY="4.0" onMouseClicked="#btnRegresar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/images/btn%20Regresar.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnMostrarCuentaporCobrar" layoutX="961.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarCuentasporPagar" prefHeight="51.0" prefWidth="204.0" stylesheets="@../resource/css/BotonesirVistas.css" text="Cuentas por Pagar" textFill="#ff5e02">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="IrCuentasporPagar" fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resource/images/Cuentasporpagar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="877.0" layoutY="309.0" prefHeight="51.0" prefWidth="168.0" text="Saldo Liquido: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSaldoLiquido" editable="false" layoutX="1037.0" layoutY="316.0" opacity="0.75" prefHeight="38.0" prefWidth="204.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="176.0" fitWidth="198.0" layoutX="64.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/images/Proveedores.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="62.0" prefHeight="79.0" prefWidth="298.0" stylesheets="@../resource/css/estiloTitulos.css" text="Proveedores" textAlignment="CENTER" />
+      <ImageView fitHeight="176.0" fitWidth="188.0" layoutX="1180.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/images/Kinal%20Mall%20Transparente.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

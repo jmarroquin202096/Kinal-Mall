@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteCuentasporPagar" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="caa123f6-c362-487e-a7d0-8debb2a886aa">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="110"/>
+	<parameter name="LOGO_HEADER" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[Call sp_ReporteCuentasPorPagar;]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroFactura" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaLimitePago" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estadoPago" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorNetoPago" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="servicioPrestado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldoFavor" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldoContra" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="638" height="54" uuid="38957c60-c6df-414a-8461-c275e91d04f9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Garamond" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Reportes Cuentas por Pagar]]></text>
+			</staticText>
+			<image>
+				<reportElement x="638" y="0" width="164" height="79" uuid="26197b55-ef6e-4a7b-be81-6a6ed838291d"/>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="58" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="25" y="17" width="130" height="20" uuid="0106f696-cac2-40c3-b79b-5a48adf30ba6"/>
+				<textElement>
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="37" width="802" height="1" forecolor="#0066FF" uuid="cbccd1ce-6c3f-45ea-bf06-c3e198dda32e"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="25" width="25" height="20" uuid="c9ba4030-cc56-4c94-aaba-fcf4f5ee5d0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="14"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="25" width="70" height="20" uuid="344d7d6b-a763-48eb-ab4b-cef3021c972b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="14"/>
+				</textElement>
+				<text><![CDATA[Numero Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="25" width="69" height="20" uuid="4d9d4966-410f-4fcd-9d0b-0998fa21ef56"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="14"/>
+				</textElement>
+				<text><![CDATA[Fecha Limite Pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="25" width="51" height="20" uuid="24c29767-0760-4212-a613-9b2268a7dbde"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="14"/>
+				</textElement>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="25" width="26" height="20" uuid="8e1fe181-025e-449e-8ccc-9dc21e82a5fc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="14"/>
+				</textElement>
+				<text><![CDATA[NIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="419" y="25" width="63" height="20" uuid="9cb1d7d6-c2b2-4488-bf57-0ffec1aec7a5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="14"/>
+				</textElement>
+				<text><![CDATA[Servicio Prestado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="520" y="25" width="40" height="20" uuid="ec430700-63f5-4a1a-bcf2-5e00052dd514"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="14"/>
+				</textElement>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="599" y="25" width="50" height="20" uuid="692d90cb-5530-4baf-ac19-0e3f4884f57c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="14"/>
+				</textElement>
+				<text><![CDATA[Saldo Favor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="675" y="25" width="69" height="20" uuid="a0232e5b-ef26-40b7-a12d-40d8f27f7add"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="14"/>
+				</textElement>
+				<text><![CDATA[Saldo Contra]]></text>
+			</staticText>
+			<line>
+				<reportElement x="25" y="47" width="733" height="1" forecolor="#0066FF" uuid="54c3af1d-7732-461b-8248-ace677146394"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="89" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="24" width="25" height="20" uuid="6aca5163-c2fa-486a-9aca-586d49a0851e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="42" y="24" width="70" height="20" uuid="0dd7dbf8-5063-494c-a71e-b7d4c4acf136"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroFactura}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="125" y="24" width="100" height="20" uuid="bd1b3db8-f34d-4354-a918-245d1a8c657a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaLimitePago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="241" y="24" width="100" height="53" uuid="e4b91677-4955-4a87-a998-7bd200ecddb3"/>
+				<textElement>
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="24" width="51" height="20" uuid="8da5891b-cefe-4fb8-9f38-b23da7e8bbdd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="24" width="74" height="20" uuid="daff79e9-f384-433f-a1cd-f7eb0e063920"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{servicioPrestado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="24" width="69" height="20" uuid="a8a64d33-0e97-4e35-b305-a8f3adbe6d01"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="585" y="24" width="80" height="20" uuid="0d9bb52e-5e24-4487-ba3b-f2f12d396532"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{saldoFavor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="675" y="24" width="83" height="20" uuid="4e6f32ce-9a8c-4df9-9e03-f5802d798329"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{saldoContra}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="141" splitType="Stretch">
+			<textField>
+				<reportElement x="355" y="121" width="100" height="20" uuid="32d33eff-f954-4d74-9f77-45bb8f38cdde"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

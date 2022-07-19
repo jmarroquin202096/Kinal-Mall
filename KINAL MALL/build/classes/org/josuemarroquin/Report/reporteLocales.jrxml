@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteX" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c4ea96b6-e644-4f4c-8cdb-67651a627ad0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="LOGO_HEADER" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select * from Locales]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldoFavor" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldoContra" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mesesPendientes" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="disponibilidad" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorLocal" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valorAdministracion" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="saldoContra_1" class="java.math.BigDecimal" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{saldoContra}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="12" width="427" height="54" uuid="08cdad62-0bc2-46ef-8368-411575d01265"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Garamond" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Reportes Locales]]></text>
+			</staticText>
+			<image>
+				<reportElement x="457" y="0" width="115" height="86" uuid="d9cd157c-00e4-4edc-b9ad-3c15215e7d28"/>
+				<imageExpression><![CDATA[$P{LOGO_HEADER}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="43" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="15" y="11" width="114" height="19" uuid="271d7155-29cc-46e6-868d-cfc26dcfc33d"/>
+				<textElement>
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="30" width="570" height="1" forecolor="#0066FF" uuid="ecab8106-9366-4df3-a282-f6407e44c378"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="56">
+			<staticText>
+				<reportElement x="0" y="11" width="31" height="28" uuid="db1f6971-afe2-48b2-bfdb-0c21253f9d76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="12" width="69" height="28" uuid="c7d7be44-97d3-485e-b851-f7d1acc88342"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="18"/>
+				</textElement>
+				<text><![CDATA[Saldo Favor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="12" width="68" height="28" uuid="bcce6de3-31ab-4fd7-96d5-68a286a2c65d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="18"/>
+				</textElement>
+				<text><![CDATA[Saldo Contra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="12" width="90" height="28" uuid="fdac8acc-7a23-4355-865f-ded75aad0e92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="18"/>
+				</textElement>
+				<text><![CDATA[Meses Pendientes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="12" width="73" height="28" uuid="705dd73c-5d0a-43ce-b509-351563235137"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="18"/>
+				</textElement>
+				<text><![CDATA[Disponibilidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="12" width="100" height="28" uuid="ecf6eac4-82c2-432a-a183-b90b48c77aba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="18"/>
+				</textElement>
+				<text><![CDATA[Valor Administracion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="12" width="58" height="28" uuid="4c264d77-7a0d-495b-892a-2aa9a95631ba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Poster Compressed" size="18"/>
+				</textElement>
+				<text><![CDATA[Valor Local]]></text>
+			</staticText>
+			<line>
+				<reportElement x="15" y="51" width="544" height="1" forecolor="#0066FF" uuid="2313d50d-a811-494e-8392-d89165b1e517"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="73" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="21" width="31" height="20" uuid="2fb6c3ab-f324-4210-8bb4-c8b534c6bddd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="42" y="21" width="73" height="20" uuid="84bcfaeb-5416-4606-8632-5b4999b238ff"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{saldoFavor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="21" width="68" height="20" uuid="c90be9d5-ca8c-4ab9-a4e1-bbdb36dae737"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{saldoContra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="21" width="58" height="20" uuid="2fde037c-18cf-4894-b847-a0f90f6b543e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mesesPendientes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="21" width="45" height="20" uuid="a93c990e-9873-45ac-b0dc-4201d0dc92c0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{disponibilidad} ? "Si" :"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="21" width="71" height="20" uuid="05ce17e1-08e8-4147-8d9c-26993accc1ed"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorLocal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="21" width="75" height="20" uuid="e3bf7dce-7934-459b-94d3-4b1257fd8002"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorAdministracion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="137" splitType="Stretch">
+			<textField>
+				<reportElement x="254" y="117" width="100" height="20" uuid="2c7720a5-3c08-4901-95a5-4cc5057009d9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="197" y="43" width="209" height="62" uuid="a9bc0d67-42af-43a7-9eb1-35d246fdc9f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<text><![CDATA[Josué Daniel Marroquín Hernández
+ 2020296
+IN5BV
+jmarroquin-2020296@kinal.edu.gt]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

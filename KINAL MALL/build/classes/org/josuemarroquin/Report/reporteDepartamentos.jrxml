@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteDepartamentos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac931c15-8a40-4206-b6f1-bccf1d5d4d70">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="244"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from Departamentos]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="id_1" class="java.lang.Integer" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{id}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="25" y="23" width="427" height="54" uuid="f6907d17-15dc-4b90-b216-bd69d56cb61b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Garamond" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Reportes Departamentos]]></text>
+			</staticText>
+			<image>
+				<reportElement x="452" y="0" width="120" height="95" uuid="abc9cb65-4339-41ea-8925-35b8631abaec"/>
+				<imageExpression><![CDATA["C:\\Users\\econt\\Documents\\NetBeansProjects\\KINAL MALL\\src\\org\\josuemarroquin\\resource\\images\\Kinal MALL.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="34">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="34" y="4" width="130" height="20" uuid="dcb0ee2f-fae1-43ab-94f5-2accbc732876"/>
+				<textElement>
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="23" width="571" height="1" forecolor="#0033FF" uuid="119d1391-116b-4dcb-8770-17de934373b4"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="53">
+			<staticText>
+				<reportElement x="74" y="14" width="100" height="28" uuid="48b1ec84-30a4-4bf2-bb83-e6e714ebd026"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="14" width="161" height="28" uuid="a0ee7df4-e035-4b9f-932d-66de2f029bb9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<line>
+				<reportElement x="25" y="42" width="514" height="1" forecolor="#0033FF" uuid="323d30de-5ead-4448-8d4d-2c58ff5ab1a0"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="51">
+			<textField>
+				<reportElement x="74" y="21" width="100" height="20" uuid="e6cee3c9-a573-4afd-af38-5906dc7e82e5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="21" width="252" height="20" uuid="1929f1f4-029b-48b4-9176-af900d4c3bc3"/>
+				<textElement>
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="133" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="180" y="35" width="209" height="62" uuid="a69e8c52-131f-4c1a-97ef-0cfbc515de5f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Josué Daniel Marroquín Hernández
+ 2020296
+IN5BV
+jmarroquin-2020296@kinal.edu.gt]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="217" y="113" width="127" height="20" uuid="3d4af96c-1f93-4af5-8121-607a611a8fea"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

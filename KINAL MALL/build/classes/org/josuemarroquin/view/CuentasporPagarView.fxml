@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josuemarroquin.controller.CuentasporPagarController">
+   <children>
+      <ImageView fitHeight="766.0" fitWidth="1361.0" layoutY="-6.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../resource/images/Kinal%20Mall%20Vistas.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblCuentasporPagar" layoutX="405.0" layoutY="376.0" onMouseClicked="#selecionarElemento" prefHeight="356.0" prefWidth="855.0" stylesheets="@../resource/css/estiloTableview.css">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="86.82022094726562" text="ID" />
+          <TableColumn fx:id="colNumeroFactura" prefWidth="129.97982788085938" text="Numero Factura" />
+            <TableColumn fx:id="colFechaLimitePago" prefWidth="161.76470947265625" text="Fecha Limite de Pago" />
+            <TableColumn fx:id="colEstadoPago" prefWidth="112.57489013671875" text="Estado Pago" />
+            <TableColumn fx:id="colValorNetoPago" prefWidth="134.58740234375" text="Valor Neto Pago" />
+            <TableColumn fx:id="colAdministracion" prefWidth="124.384521484375" text="Administracion" />
+            <TableColumn fx:id="colProveedores" prefWidth="108.4154052734375" text="Proveedor" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="60.0" fitWidth="70.0" layoutX="300.0" layoutY="9.0" onMouseClicked="#btnRegresar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/images/btn%20Regresar.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="41.0" layoutY="410.0" prefHeight="311.0" prefWidth="220.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#nuevo" prefHeight="67.0" prefWidth="232.0" stylesheets="@../resource/css/BotonesKinalMall.css" text="Nuevo" textFill="WHITE" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fx:id="imgNuevo" fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/images/btn%20Nuevo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" prefHeight="64.0" prefWidth="232.0" stylesheets="@../resource/css/BotonesKinalMall.css" text="Eliminar" textFill="WHITE" GridPane.rowIndex="2">
+               <graphic>
+                  <ImageView fx:id="imgEliminar" fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/images/btn%20Eliminar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editar" prefHeight="65.0" prefWidth="234.0" stylesheets="@../resource/css/BotonesKinalMall.css" text="Editar" textFill="WHITE" GridPane.rowIndex="3">
+               <graphic>
+                  <ImageView fx:id="imgEditar" fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/images/btn%20Editar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnReportar" mnemonicParsing="false" onAction="#reportar" prefHeight="62.0" prefWidth="230.0" stylesheets="@../resource/css/BotonesKinalMall.css" text="Reportar" textFill="WHITE" GridPane.rowIndex="4">
+               <graphic>
+                  <ImageView fx:id="imgReportar" fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resource/images/btn%20Reportar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <Label layoutX="318.0" layoutY="99.0" prefHeight="51.0" prefWidth="48.0" text="ID: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" editable="false" layoutX="572.0" layoutY="94.0" opacity="0.75" prefHeight="38.0" prefWidth="354.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="313.0" layoutY="138.0" prefHeight="51.0" prefWidth="188.0" text="Numero Factura: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNumeroFac" layoutX="574.0" layoutY="145.0" prefHeight="38.0" prefWidth="350.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="940.0" layoutY="256.0" prefHeight="51.0" prefWidth="188.0" text="Estado de Pago: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="318.0" layoutY="196.0" prefHeight="51.0" prefWidth="193.0" text="Valor Neto Pago: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtValornetoPago" layoutX="575.0" layoutY="202.0" prefHeight="38.0" prefWidth="348.0">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="946.0" layoutY="170.0" prefHeight="51.0" prefWidth="175.0" text="Administración: " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="946.0" layoutY="87.0" prefHeight="51.0" prefWidth="175.0" text="Proveedor:" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbAdmin" layoutX="948.0" layoutY="215.0" opacity="0.75" prefHeight="31.0" prefWidth="230.0" stylesheets="@../resource/css/estiloCombobox.css" />
+      <ComboBox fx:id="cmbproveedor" layoutX="946.0" layoutY="129.0" opacity="0.75" prefHeight="31.0" prefWidth="229.0" stylesheets="@../resource/css/estiloCombobox.css" />
+      <Label layoutX="318.0" layoutY="248.0" prefHeight="51.0" prefWidth="260.0" text="Fecha Límite de Pago:" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="575.0" layoutY="259.0" opacity="0.75" prefHeight="46.0" prefWidth="348.0" style="-fx-background-color: white;">
+         <children>
+            <JFXDatePicker fx:id="dtpickerFechalimite" defaultColor="#17202a" layoutX="19.0" layoutY="5.0" prefHeight="38.0" prefWidth="310.0" />
+         </children>
+      </AnchorPane>
+      <ComboBox fx:id="cmbEstadoPago" layoutX="945.0" layoutY="299.0" opacity="0.75" prefHeight="31.0" prefWidth="230.0" stylesheets="@../resource/css/estiloCombobox.css" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1215.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/images/Kinal%20Mall%20Transparente.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="78.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/images/Cuentasporpagar.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="59.0" prefHeight="79.0" prefWidth="298.0" stylesheets="@../resource/css/estiloTitulos.css" text="Cuentas Por Pagar" textAlignment="CENTER" />
+   </children>
+</AnchorPane>

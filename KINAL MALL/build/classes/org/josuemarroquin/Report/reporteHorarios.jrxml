@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteHorarios" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="31df9b10-6da0-4bbd-89ab-519ed99f73de">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="LOGO_HEADER" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select * from Horarios]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horarioEntrada" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horarioSalida" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lunes" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="martes" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="miercoles" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jueves" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="viernes" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="14" width="427" height="54" uuid="b8341b0e-864f-44f2-8da1-43728da68251"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Garamond" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Reportes Horarios]]></text>
+			</staticText>
+			<image>
+				<reportElement x="427" y="0" width="128" height="84" uuid="658d0c8c-5464-4639-9eca-c528eba87d41"/>
+				<imageExpression><![CDATA[$P{LOGO_HEADER}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="14" y="10" width="143" height="21" uuid="3eccc32b-788f-44c2-8976-8d2b0365cc6f"/>
+				<textElement>
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="31" width="555" height="1" forecolor="#0066FF" uuid="a834d40b-2e85-4712-84c7-cb2a2e9929fa"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="14" y="47" width="526" height="1" forecolor="#0066FF" uuid="4ec986e1-887b-4abe-97ff-bed57cf2f68c"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="10" width="42" height="26" uuid="428901c3-b399-4130-a852-14cc2c5cc7a5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="10" width="86" height="26" uuid="f71d1986-d79a-437f-8625-61595a3976a5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Horario Entrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="10" width="78" height="26" uuid="8298d57c-3cfc-45b1-926d-502aef821ced"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Horario Salida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="10" width="45" height="26" uuid="35836394-34de-4097-a381-93c8666cf8ec"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Lunes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="10" width="50" height="26" uuid="f12a217e-32ee-47ca-bdf5-bbbe02b52545"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Martes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="10" width="60" height="26" uuid="c382e331-b4c4-47bb-a507-27e7733ca725"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Miercoles]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="10" width="43" height="26" uuid="ea33f181-d1fb-4c24-bb92-6a3ef295d5ee"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Jueves]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="493" y="10" width="47" height="26" uuid="51fc43ef-a8cb-43d0-bf15-c01331626580"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bodoni MT Poster Compressed" size="20"/>
+				</textElement>
+				<text><![CDATA[Viernes]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="24" width="42" height="20" uuid="37c050b7-a91a-489c-9822-cca619f49921"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm.ss a">
+				<reportElement x="54" y="24" width="86" height="20" uuid="71cc09bf-0417-45ec-9253-20a72fce640c"/>
+				<textElement>
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horarioEntrada}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm.ss a">
+				<reportElement x="155" y="24" width="81" height="20" uuid="5ee9ab1f-5049-42bc-a7a8-651cc22b1353"/>
+				<textElement>
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horarioSalida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="252" y="24" width="43" height="20" uuid="099668c8-a993-40fd-b357-ce313a29f8d3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lunes} ? "Si" :"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="24" width="50" height="20" uuid="95aff720-052e-4475-800d-c042cc18ccce"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{martes} ? "Si" :"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="24" width="42" height="20" uuid="a1744142-0cb0-4627-9de8-b4011d061a99"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{miercoles} ? "Si" :"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="24" width="39" height="20" uuid="fa85ac94-9219-45c7-a0fd-c8d15ad0367d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jueves} ? "Si" :"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="493" y="24" width="47" height="20" uuid="66043685-745f-4b4f-a5b7-a594b0bd9ec3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{viernes} ? "Si" :"No"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="176" y="15" width="209" height="62" uuid="1adc496a-45ef-4eba-b294-bc2246e10ee9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bell MT" size="12"/>
+				</textElement>
+				<text><![CDATA[Josué Daniel Marroquín Hernández
+ 2020296
+IN5BV
+jmarroquin-2020296@kinal.edu.gt]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="233" y="82" width="100" height="20" uuid="47f9c610-2b65-422b-b8d1-cdc71cfa2700"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bell MT" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
